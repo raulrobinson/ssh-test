@@ -16,8 +16,10 @@ public class SshController {
     }
 
     @GetMapping("/execute")
-    public String executeCommand(@RequestParam String host, @RequestParam int port,
-                                 @RequestParam String username, @RequestParam String password,
+    public String executeCommand(@RequestParam String host,
+                                 @RequestParam int port,
+                                 @RequestParam String username,
+                                 @RequestParam String password,
                                  @RequestParam String command) {
         return sshService.executeRemoteCommand(host, port, username, password, command);
     }
